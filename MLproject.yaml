@@ -1,0 +1,14 @@
+name: Fase_3_RefactoredV2_MLFLOW_Equipo4
+
+docker_env:
+  image: mlflow_server
+
+entry_points:
+  main:
+    parameters:
+      filepath: {type: str, default: "./Absenteeism_at_work.csv"}
+      learning_rate: {type: float, default: 0.001}
+      epochs: {type: int, default: 10}
+    command: >
+      mlflow run /mnt/data/Fase_3_RefactoredV2_MLFLOW_Equipo4.ipynb
+      -P filepath={filepath}
